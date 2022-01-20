@@ -1,0 +1,105 @@
+<br>
+<section>
+  <p class="search">
+  <mat-form-field appearance="legacy">
+    <mat-label>Name City</mat-label>
+      <input matInput placeholder="Enter Name City....." #userinput>
+  </mat-form-field>
+  <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="getCity(userinput.value);  getCityFuture(userinput.value)">
+    <mat-icon>search</mat-icon>
+  </button>
+</p>
+</section>
+
+<div>
+  <h5 style="text-align: center;">Current Weather and Forecast in your city..... </h5>
+</div>
+
+<div class="content-card" style="text-align: center;">
+<mat-card class="card1">
+  <h2 style="text-align: center;">
+    Weather In {{weather.name}}, {{weather.sys.country}}
+  </h2>
+  <p>{{curentTime | date:"HH:mm - EE MMM yyyy"}}</p>
+  <span><img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}.png" alt="01d.png">
+  </span>
+  <br>
+  <h1 class="celcius">{{(weather.main.temp -32) *5/9 | number:'1.0-0'}} &#176;C</h1>
+  <h4><b>{{weather.weather[0].description}}</b></h4>
+
+<label><b>Humidity</b></label><br> 
+<p>{{weather.main.humidity}} %</p>
+
+<label><b>Pressure</b></label><br> 
+<p>{{weather.main.pressure}} hpa</p>
+<label><b>Sunrise & Sunset</b></label><br> 
+<p>{{weather.sys.sunrise * 1000 | date:'H:mm'}} WIB & {{weather.sys.sunset* 1000 | date:'H:mm'}} WIB</p>
+
+</mat-card>
+
+<br>
+<mat-grid-list cols="4" rowHeight="200px">
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>{{data.city.name}}</mat-card-title>
+        <mat-card-subtitle>{{data.list[8].weather[0].description}}</mat-card-subtitle>
+        <img mat-card-sm-image src="http://openweathermap.org/img/wn/{{data.list[8].weather[0].icon}}.png" alt="01d.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        {{(data.list[8].main.temp-32) *5/9 | number:'1.0-0'}} &#176;C
+        <br>
+        {{data.list[8].dt_txt | date:"HH:mm - EE MMM"}}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>{{data.city.name}}</mat-card-title>
+        <mat-card-subtitle>{{data.list[16].weather[0].description}}</mat-card-subtitle>
+        <img mat-card-sm-image src="http://openweathermap.org/img/wn/{{data.list[16].weather[0].icon}}.png" alt="01d.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        {{(data.list[16].main.temp-32) *5/9 | number:'1.0-0'}} &#176;C
+        <br>
+        {{data.list[16].dt_txt | date:"HH:mm - EE MMM"}}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>{{data.city.name}}</mat-card-title>
+        <mat-card-subtitle>{{data.list[24].weather[0].description}}</mat-card-subtitle>
+        <img mat-card-sm-image src="http://openweathermap.org/img/wn/{{data.list[24].weather[0].icon}}.png" alt="01d.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        {{(data.list[24].main.temp-32) *5/9 | number:'1.0-0'}} &#176;C
+        <br>
+        {{data.list[24].dt_txt | date:"HH:mm - EE MMM"}}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>{{data.city.name}}</mat-card-title>
+        <mat-card-subtitle>{{data.list[32].weather[0].description}}</mat-card-subtitle>
+        <img mat-card-sm-image src="http://openweathermap.org/img/wn/{{data.list[32].weather[0].icon}}.png" alt="01d.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        {{(data.list[32].main.temp-32) *5/9 | number:'1.0-0'}} &#176;C
+        <br>
+        {{data.list[32].dt_txt | date:"HH:mm - EE MMM"}}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+
+</div>

@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container" hasBackdrop="false" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" >
+
+    <mat-toolbar >
+    <mat-icon>accessibility</mat-icon>
+    <span>&nbsp;My List User</span>
+    <span class="example-spacer"></span>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/aplikasi-beranda-component" routerLinkActive="active-list-item">
+        <mat-icon class="nav-link-icon"  aria-hidden="false" aria-label="Example home icon">widgets</mat-icon>  
+        <span>&nbsp;Aplikasi Beranda</span>
+     </a>
+    </mat-nav-list>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-icon>wb_sunny</mat-icon>
+
+      <span> &nbsp; Weather</span>
+      
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+  </div>
+
+    <!-- The routed views render in the <router-outlet>-->
+      <router-outlet></router-outlet>
+
+</mat-drawer-container>

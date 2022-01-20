@@ -1,0 +1,29 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+    border: 1px solid #555;
+  }
+
+  mat-drawer-content {
+      background: #eee;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+.active-list-item .mat-icon{
+    color: #3f51b5;
+ }
+ 
+
+  mat-sidenav {
+    width: 200px;
+  }
